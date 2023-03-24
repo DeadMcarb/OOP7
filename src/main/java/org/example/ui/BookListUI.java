@@ -62,8 +62,6 @@ public class BookListUI {
         books.deleteById(id);
     }
 
-
-
     private void printList(List<Book> arr) {
         for (Book book : arr) {
             System.out.println(book.toString());
