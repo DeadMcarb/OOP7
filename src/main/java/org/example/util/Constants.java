@@ -15,7 +15,10 @@ public class Constants {
     public static final int ADD_NEW_BOOK = 9;
     public static final int DELETE_BOOK_BY_ID = 10;
     public static final int ADD_SOME_BOOKS_TO_ARRAY = 11;
-    public static final int EXIT = 12;
-}
 
+    public static final int BOOK_LIST_FOR_EVERY_PUBLISHER = 12;
+    public static final int PUBLISHER_LIST = 13;
+
+    public static final int EXIT = 14;
+}
 

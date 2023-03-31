@@ -3,14 +3,48 @@ package org.example.ui;
 import org.example.data.Book;
 import org.example.data.BookList;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BookListUI {
     private BookList books;
     private Scanner scanner;
 
-////    ТУТ НИЧЕГО НЕ ПОМЕНЯЛОСЬ
+
+
+    public void showBookListForEveryPublisher() {
+        HashMap<String, List<Book>> map = books.getBookListForEveryPublisher();
+
+        for (Map.Entry<String, List<Book>> entry : map.entrySet()) {
+            System.out.println(entry.getKey());
+
+            System.out.println("``````````````````````````````````````````````````");
+            List<Book> arr = entry.getValue();
+            for (Book book : arr) {
+                System.out.println(book);
+            }
+            System.out.println("``````````````````````````````````````````````````");
+        }
+
+
+
+    }
+
+    public void showPublisherSet() {
+        books.getPublisherSet().forEach(System.out::println);
+
+    }
+
+    public void showAuthorListSortedByAlphabet() {
+        books.getAuthorListSortedByAlphabet().forEach(System.out::println);
+
+    }
+
+
+
+
     public void addNewBook(BookList books, Scanner scanner) {
         System.out.print("Enter id >> ");
         int id = scanner.nextInt();
@@ -91,16 +125,6 @@ public class BookListUI {
         printList(books.getByAuthorSortedByYears(author));
     }
 
-
-
-    public void showAuthorListSortedByAlphabet() {
-
-        List<String> arr = books.getAuthorListSortedByAlphabet();
-
-        for (String element : arr) {
-            System.out.println(element);
-        }
-    }
 
 
 

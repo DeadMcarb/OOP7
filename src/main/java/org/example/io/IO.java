@@ -53,7 +53,6 @@ public class IO implements InOut{
     }
 
 
-    /////////// НАДО ТРАЙ С РЕСУРСАМИ?
     public void writeToJSON(BookList books, String filePath) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {

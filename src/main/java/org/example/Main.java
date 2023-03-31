@@ -1,11 +1,12 @@
 package org.example;
 
+
 import org.example.data.BookList;
 import org.example.io.IO;
 import org.example.ui.BookListUI;
 
 import java.io.Serializable;
-import java.util.Scanner;
+import java.util.*;
 
 import static org.example.util.Constants.*;
 
@@ -33,11 +34,17 @@ public class Main implements Serializable {
                 [9] Add new book                         |
                 [10] Delete book by Id                   |
                 [11] Add some books to Array             |
-                [12] Exit                                |
+                -----------------------------------------|
+                [12] show every publisher`s books        |
+                [13] show list of publishers             |
+                -----------------------------------------|
+                [14] Exit                                |
                 -----------------------------------------|""");
 
         System.out.print(">> ");
     }
+
+
 
 
     private void run() {
@@ -56,6 +63,7 @@ public class Main implements Serializable {
             scanner.nextLine();
 
             switch (m) {
+
 
                 case READ_FILE -> books.setBooksList(io.readFromFile("MyBooks.dat"));
                 case SAVE_IN_FILE -> io.writeToFile(books, "MyBooks.dat");
@@ -81,11 +89,19 @@ public class Main implements Serializable {
 
                 case ADD_SOME_BOOKS_TO_ARRAY -> ui.createSomeBooksArray(books);
 
+
+
+                case BOOK_LIST_FOR_EVERY_PUBLISHER -> ui.showBookListForEveryPublisher();
+                case PUBLISHER_LIST -> ui.showPublisherSet();
+
+
                 case EXIT -> {
                     break loop;
                 }
+
             }
         }
     }
 }
+
 
